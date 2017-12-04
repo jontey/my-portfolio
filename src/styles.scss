@@ -1,0 +1,420 @@
+/*
+    ------------------------
+    ----- 1. Variables -----
+    ------------------------
+*/
+
+// Define base and accent colors
+$base-color: #3498db;
+
+// Define background colors
+$background: #fff;
+
+// Define border colors
+$border: #dcd9d9;
+
+/*
+    ---------------------
+    ----- 2. Mixins -----
+    ---------------------
+*/
+
+@mixin transition($duration: 0.5s, $func: ease, $property: all) {
+    transition: #{$duration} #{$func} #{$property};
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        @content;
+    }
+
+    &:-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        @content;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        @content;
+    }
+}
+
+/*
+    ----------------------------
+    ----- 3. Global Styles -----
+    ----------------------------
+*/
+
+body {
+    &.active {
+        overflow: hidden;
+        z-index: -1;
+    }
+}
+
+@keyframes dropHeader {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+header {
+    text-align: center;
+    animation-name: dropHeader;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-duration: 0.75s;
+}
+
+#menu {
+    &.active {
+        display: block;
+    }
+}
+
+.btn-rounded-white {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 25px;
+    border: 3px solid #fff;
+    border-radius: 30px;
+    text-decoration: none;
+
+    &:hover {
+        color: $base-color;
+        background: #fff;
+    }
+}
+
+.img-rounded {
+    border-radius: 50%;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.shadow-large {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08), 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.heading {
+    position: relative;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 300;
+    margin: 0 0 30px 0;
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 100%;
+        height: 1px;
+        width: 50px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+}
+
+.container > div {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+div.container:nth-of-type(even) {
+    background-color: #eee;
+}
+
+
+/*
+    --------------------------
+    ----- 4. Lead Styles -----
+    --------------------------
+*/
+
+#lead {
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
+    background: url(../images/lead-bg.jpg) fixed;
+    background-size: cover;
+    padding: 15px;
+    overflow: hidden;
+}
+
+#lead-content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    h1 {
+        color: #fff;
+        font-weight: 900;
+        font-size: 5em;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        line-height: 0.9em;
+    }
+
+    h2 {
+        color: lighten($base-color, 25%);
+        font-weight: 500;
+        font-size: 2.25em;
+        margin-bottom: 15px;
+    }
+}
+
+#lead-down {
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    bottom: 20px;
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+    line-height: 35px;
+
+    i {
+        animation: pulsate 1.5s ease;
+        animation-iteration-count: infinite;
+        padding-top: 5px;;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.5, 1.5);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+/*
+    ---------------------------
+    ----- 5. About Styles -----
+    ---------------------------
+*/
+
+#about {
+    padding: 75px 15px;
+    border-bottom: 1px solid $border;
+
+    p {
+        margin: 0;
+    }
+}
+
+/*
+    --------------------------------
+    ----- 6. Experience Styles -----
+    --------------------------------
+*/
+
+#experience,
+#skill {
+    padding: 50px 15px;
+    text-align: center;
+    border-bottom: 1px solid $border;
+}
+
+#experience-timeline {
+    margin: 30px auto 0 auto;
+    position: relative;
+    max-width: 1000px;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 303px;
+        right: auto;
+        height: 100%;
+        width: 3px;
+        background: $base-color;
+        z-index: 0;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 3px;
+        height: 40px;
+        background: $base-color;
+        background: linear-gradient(to bottom, $base-color, rgba($base-color, 0));
+        top: 100%;
+        left: 303px;
+    }
+}
+
+.vtimeline-content {
+    margin-left: 350px;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 3px;
+    text-align: left;
+}
+
+.vtimeline-point {
+    position: relative;
+    display: block;
+    vertical-align: top;
+    margin-bottom: 30px;
+}
+
+.vtimeline-icon {
+    position: relative;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    background: $base-color;
+    border-radius: 50%;
+    float: left;
+    z-index: 99;
+    margin-left: 280px;
+
+    i {
+        display: block;
+        font-size: 2em;
+        margin-top: 10px;
+    }
+}
+
+.vtimeline-date {
+    width: 260px;
+    text-align: right;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    font-weight: 300;
+    color: #374054;
+}
+
+/*
+    -----------------------------
+    ----- 12. Media Queries -----
+    -----------------------------
+*/
+
+// Collapse timeline
+@media only screen and (max-width: 750px) {
+
+    #experience-timeline {
+        &:before, &:after {
+            left: 23px;
+        }
+
+    }
+
+    .vtimeline-date {
+        width: auto;
+        text-align: left;
+        position: relative;
+        margin-bottom: 15px;
+        display: block;
+        margin-left: 70px;
+    }
+
+    .vtimeline-icon {
+        margin-left: 0;
+    }
+
+    .vtimeline-content {
+        margin-left: 70px;
+    }
+
+}
+
+// Medium Devices
+@media only screen and (max-width : 992px) {
+
+    #lead {
+        height: auto;
+        min-height: auto;
+        max-height: auto;
+        padding: 100px 15px;
+    }
+
+    #lead-content {
+        position: relative;
+        transform: none;
+        left: auto;
+        top: auto;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+        }
+    }
+
+}
+
+// Small Devices
+@media only screen and (max-width : 768px) {
+
+    header {
+        position: fixed;
+        display: none;
+        z-index: 999;
+        animation: none;
+        bottom: 0;
+        height: 100%;
+    }
+
+    #lead-content {
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+        }
+
+        a {
+            padding: 10px 20px;
+        }
+    }
+
+    #lead-down {
+        display: none;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .social {
+        text-align: center;
+    }
+
+}
