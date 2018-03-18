@@ -4,10 +4,12 @@ import Header from "./Header";
 import Lead from "./Lead";
 import Content from "./Content";
 
+import resume from "../../Resume-JonathanTey.pdf";
+
 const Info = {
   name: "Jonathan Tey",
   position: "Full-Stack Engineer",
-  resume: require("../../Resume-JonathanTey.pdf")
+  resume: resume
 };
 
 const Sections = [
