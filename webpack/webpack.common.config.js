@@ -1,40 +1,50 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
   context: __dirname,
 
   entry: {
-    index: [
-      '../src/index.js'
-    ]
+    index: ["../src/index.js"]
   },
 
   module: {
     rules: [
       {
         test: /\.js/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/'
+        loader: "babel-loader",
+        exclude: "/node_modules/"
+      },
+      {
+        test: /\.pdf$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]?[hash]"
+            }
+          }
+        ]
       },
       {
         test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png$|\.jpg$|\.gif$/,
-        loader: 'file-loader'
-      }, {
+        loader: "file-loader"
+      },
+      {
         test: /\.html$/,
-        loader: 'html-loader'
+        loader: "html-loader"
       }
-    ],
+    ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: '../src/index.html',
-      filename: 'index.html',
-      inject: 'body'
+      template: "../src/index.html",
+      filename: "index.html",
+      inject: "body"
     }),
     new webpack.ProvidePlugin({
-      Popper: ['popper.js', 'default']
+      Popper: ["popper.js", "default"]
     })
   ]
 };
