@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/fontawesome-free-solid'
+
 const handleShow = name => {
   document.getElementById(name).scrollIntoView({block: 'start', behavior: 'smooth'})
 }
@@ -12,7 +15,7 @@ const Lead = ({info}) => (
       <a href={info.resume} className="btn-rounded-white">Download Resume</a>
     </div>
     <div id="lead-down" onClick={handleShow.bind(this, 'about')}>
-      <i class="fa fa-angle-down" aria-hidden="true"></i>
+      <FontAwesomeIcon icon={faAngleDown} />
     </div>
   </div>
 )

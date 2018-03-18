@@ -1,23 +1,17 @@
 import React, { Component } from 'react'
 
-import { Container, Row, Col } from 'reactstrap'
-
 import About from './About'
-import Experience from './Experience'
+import Experience from './Experience/'
 import Skill from './Skill'
 
 const Content = ({section, index}) => {
-  // console.log(section)
-  if (!section.content){
+  if (!section.type){
     return null
   }
   let content = null
   switch (section.type){
     case 'about':
       content = <About section={section} />
-      break;
-    case 'experience':
-      content = <Experience section={section} />
       break;
     case 'experience':
       content = <Experience section={section} />

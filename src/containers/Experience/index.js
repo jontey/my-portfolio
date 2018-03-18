@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 
-import { Container, Row, Col } from 'reactstrap'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { faMapMarkerAlt } from '@fortawesome/fontawesome-free-solid'
 
-const Experience = ({section}) => {
-  const experienceItems = section.content.map((e, i) => {
+import Experiences from './content'
+
+const Experience = (section) => {
+  const experienceItems = Experiences.map((e, i) => {
     return (
-      <div key={e.date} className="vtimeline-point">
+      <div key={`experiences_${i}`} className="vtimeline-point">
         <div className="vtimeline-icon">
-          <i className="fa fa-map-marker" />
+          <FontAwesomeIcon icon={faMapMarkerAlt} />
         </div>
         <div className="vtimeline-block">
           <span className="vtimeline-date">

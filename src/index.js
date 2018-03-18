@@ -8,10 +8,6 @@ import './styles.scss'
 /* Mini.css imports */
 import 'mini.css/dist/mini-default.css'
 
-/* Font-awesome imports */
-import 'font-awesome/scss/font-awesome.scss'
-
-
 const render = Component => {
   ReactDOM.render(
     <AppContainer>

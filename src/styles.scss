@@ -87,6 +87,10 @@ header {
     border-radius: 30px;
     text-decoration: none;
 
+    &:visited {
+        color: #fff;
+    }
+
     &:hover {
         color: $base-color;
         background: #fff;
@@ -300,10 +304,10 @@ div.container:nth-of-type(even) {
     z-index: 99;
     margin-left: 280px;
 
-    i {
+    svg {
         display: block;
-        font-size: 2em;
-        margin-top: 10px;
+        font-size: 27px;
+        margin: 12px auto 0;
     }
 }
 
@@ -315,6 +319,10 @@ div.container:nth-of-type(even) {
     top: 10px;
     font-weight: 300;
     color: #374054;
+}
+
+.skills.card {
+    max-width: 302px;
 }
 
 /*

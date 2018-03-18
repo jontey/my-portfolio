@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Content from './content'
 
 const About = ({section}) => (
   <div className="row">
@@ -7,7 +8,7 @@ const About = ({section}) => (
     </div>
     <div className="col-sm col-sm-offset-1">
       <h2 className="heading">{section.title}</h2>
-      <p>{section.content}</p>
+      <p>{Content}</p>
     </div>
   </div>
 )
