@@ -21,9 +21,9 @@
   "homepage": "https://github.com/jontey/my-portfolio#readme",
   "license": "MIT",
   "devDependencies": {
-    "react-hot-loader": "^3.0.0",
-    "style-loader": "^0.19.0",
-    "webpack-dev-server": "^2.9.3"
+    "react-hot-loader": "^4.0.0",
+    "style-loader": "^0.20.3",
+    "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
@@ -42,7 +42,7 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "file-loader": "^1.1.5",
     "html-loader": "^0.5.1",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.0.6",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.0",
     "mini.css": "^2.3.7",
@@ -52,7 +52,7 @@
     "react-dom": "^16.0.0",
     "reactstrap": "^5.0.0-alpha.4",
     "sass-loader": "^6.0.6",
-    "webpack": "^3.8.1",
+    "webpack": "^4.1.1",
     "webpack-merge": "^4.1.0"
   }
 }
