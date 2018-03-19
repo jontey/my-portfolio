@@ -1,26 +1,29 @@
-const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const path = require('path')
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require("path");
 
-const merge = require('webpack-merge')
-const commonConfig = require('./webpack.common.config')
+const merge = require("webpack-merge");
+const commonConfig = require("./webpack.common.config");
 
 const prodConfig = {
   context: __dirname,
 
+  mode: "production",
+
   output: {
-    path: path.resolve('./build'),
-    filename: 'index.js'
+    path: path.resolve("./build"),
+    filename: "index.js"
   },
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract('css-loader')
-      }, {
+        use: ExtractTextPlugin.extract("css-loader")
+      },
+      {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract('css-loader!sass-loader')
+        use: ExtractTextPlugin.extract("css-loader!sass-loader")
       }
     ]
   },
@@ -31,23 +34,12 @@ const prodConfig = {
       debug: false
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        screw_ie8: true
-      },
-      comments: false
+      "process.env.NODE_ENV": JSON.stringify("production")
     }),
     new ExtractTextPlugin({
-      filename: '[name].css'
+      filename: "[name].css"
     })
   ]
-}
+};
 
-module.exports = merge.smart(prodConfig, commonConfig)
+module.exports = merge.smart(prodConfig, commonConfig);
