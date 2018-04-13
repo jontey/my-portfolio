@@ -52,7 +52,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "reactstrap": "^5.0.0-alpha.4",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-merge": "^4.1.0"
