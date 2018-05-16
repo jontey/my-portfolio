@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "react-hot-loader": "^4.0.0",
-    "style-loader": "^0.20.3",
+    "style-loader": "^0.21.0",
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
@@ -30,7 +30,7 @@
     "@fortawesome/fontawesome-free-brands": "^5.0.8",
     "@fortawesome/fontawesome-free-regular": "^5.0.8",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
-    "@fortawesome/react-fontawesome": "0.0.17",
+    "@fortawesome/react-fontawesome": "0.0.20",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
@@ -53,7 +53,7 @@
     "react-dom": "^16.0.0",
     "react-ga": "^2.5.2",
     "reactstrap": "^5.0.0-alpha.4",
-    "sass-loader": "^6.0.6",
+    "sass-loader": "^7.0.0",
     "webpack": "^4.1.1",
     "webpack-cli": "^2.0.12",
     "webpack-merge": "^4.1.0"
