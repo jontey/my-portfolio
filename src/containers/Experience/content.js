@@ -1,6 +1,12 @@
 
 const Experiences = [
   {
+    date: 'Jan 2018 - Jun 2018',
+    company: 'Defense and Confirmation Project',
+    title: 'SEO specialist',
+    description: 'Conducted SEO analysis and led redesign of two websites to be reponsive with PWA and AMP capabilities' 
+  },
+  {
     date: 'April 2016 - Dec 2017',
     company: 'Full-time Training in Anaheim',
     title: 'Team Lead',
