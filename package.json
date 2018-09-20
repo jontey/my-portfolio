@@ -21,7 +21,7 @@
   "homepage": "https://github.com/jontey/my-portfolio#readme",
   "license": "MIT",
   "devDependencies": {
-    "react-hot-loader": "^4.0.0",
+    "react-hot-loader": "^4.3.10",
     "style-loader": "^0.21.0",
     "webpack-dev-server": "^3.1.1"
   },
