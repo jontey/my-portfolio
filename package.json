@@ -23,7 +23,7 @@
   "devDependencies": {
     "react-hot-loader": "^4.0.0",
     "style-loader": "^0.22.0",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.7.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
