@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "react-hot-loader": "^4.0.0",
-    "style-loader": "^0.22.0",
+    "style-loader": "^1.1.4",
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
