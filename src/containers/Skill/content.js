@@ -1,42 +1,45 @@
-
-import { faJs, faPython, faPhp, faReact, faWordpressSimple, faDocker, faGitlab } from '@fortawesome/fontawesome-free-brands'
+import {
+  faNodeJs,
+  faJs,
+  faPython,
+  faPhp,
+  faReact,
+  faWordpressSimple,
+  faDocker,
+  faGitlab,
+} from "@fortawesome/fontawesome-free-brands";
 
 const Skills = [
   {
-    title: 'JavaScript',
-    icon: {...faJs},
-    description: ''
+    title: "Node.js",
+    icon: { ...faNodeJs },
+    description: "",
   },
   {
-    title: 'Python',
-    icon: {...faPython},
-    description: ''
+    title: "JavaScript",
+    icon: { ...faJs },
+    description: "",
   },
   {
-    title: 'PHP',
-    icon: {...faPhp},
-    description: ''
+    title: "React",
+    icon: { ...faReact },
+    description: "",
   },
   {
-    title: 'React',
-    icon: {...faReact},
-    description: ''
+    title: "Python",
+    icon: { ...faPython },
+    description: "",
   },
   {
-    title: 'WordPress',
-    icon: {...faWordpressSimple},
-    description: ''
+    title: "WordPress",
+    icon: { ...faWordpressSimple },
+    description: "",
   },
   {
-    title: 'Docker',
-    icon: {...faDocker},
-    description: ''
+    title: "Docker",
+    icon: { ...faDocker },
+    description: "",
   },
-  {
-    title: 'GitLab',
-    icon: {...faGitlab},
-    description: ''
-  }
-]
+];
 
-export default Skills
+export default Skills;

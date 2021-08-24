@@ -1,4 +1,3 @@
-
-const Content = "Full stack software engineer with specialization in frontend JavaScript development and network administration experience."
+const Content = "IT Consulting + Backup & Recovery Systems";
 
 export default Content;

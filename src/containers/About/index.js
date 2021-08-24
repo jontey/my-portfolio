@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Content from "./content";
 
-import aboutMeImage from "../../../images/about-me.jpg";
+import aboutMeImage from "../../../images/jt.png";
 
 const About = ({ section }) => (
   <div className="row">
