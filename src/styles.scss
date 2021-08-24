@@ -87,6 +87,14 @@ header {
     border-radius: 30px;
     text-decoration: none;
 
+    &:link {
+        color: #fff;
+    }
+
+    &:link:hover {
+        text-decoration: none;
+    }
+
     &:visited {
         color: #fff;
     }
@@ -424,5 +432,9 @@ div.container:nth-of-type(even) {
     .social {
         text-align: center;
     }
+
+}
+
+.btn-rounded-white {
 
 }

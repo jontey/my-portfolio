@@ -4,15 +4,17 @@
   "description": "Portfolio using Webpack + React.js",
   "main": "js/scripts.js",
   "scripts": {
-    "build":
-      "webpack --config webpack/webpack.prod.config.js --progress --colors",
+    "build": "webpack --config webpack/webpack.prod.config.js --progress --colors",
     "watch": "webpack --config webpack/webpack.prod.config.js --watch",
     "start": "node webpack/server.js",
     "precommit": "lint-staged",
     "test": "npm run build"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -46,7 +48,7 @@
     "html-webpack-plugin": "^4.0.0",
     "husky": "^2.0.0",
     "lint-staged": "^10.0.3",
-    "mini.css": "^2.3.7",
+    "mini.css": "^3.0.1",
     "node-sass": "^4.8.3",
     "prettier": "^2.0.0",
     "react": "^16.0.0",
