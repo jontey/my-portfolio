@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Button } from "reactstrap";
-
 const handleShow = (name) => {
   document
     .getElementById(name)
@@ -10,7 +8,7 @@ const handleShow = (name) => {
 };
 
 const HeaderItems = ({ title, link }) => (
-  <Button
+  <button
     style={{ background: "#12171a", color: "#f5f5f5" }}
     key={title}
     color="link"
@@ -18,7 +16,7 @@ const HeaderItems = ({ title, link }) => (
     onClick={handleShow.bind(this, link)}
   >
     {title}
-  </Button>
+  </button>
 );
 
 HeaderItems.propTypes = {
