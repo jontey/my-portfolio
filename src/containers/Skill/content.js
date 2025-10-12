@@ -8,37 +8,45 @@ import {
   faDocker,
   faGitlab,
 } from "@fortawesome/free-brands-svg-icons";
+import {
+  faServer,
+  faCloud,
+  faMobile,
+  faDatabase,
+  faCogs,
+  faRocket,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Skills = [
   {
-    title: "Node.js",
-    icon: { ...faNodeJs },
-    description: "",
+    title: "Enterprise Solutions",
+    icon: { ...faServer },
+    description: "Custom ERP systems, inventory management, and multi-branch operational platforms that scale with your business needs.",
   },
   {
-    title: "JavaScript",
-    icon: { ...faJs },
-    description: "",
+    title: "Cloud Architecture",
+    icon: { ...faCloud },
+    description: "Scalable, cloud-ready applications with modern deployment strategies using containerization and microservices.",
   },
   {
-    title: "React",
+    title: "Full-Stack Development", 
     icon: { ...faReact },
-    description: "",
+    description: "End-to-end web applications using React, Node.js, Python, and modern JavaScript frameworks for seamless user experiences.",
   },
   {
-    title: "Python",
-    icon: { ...faPython },
-    description: "",
+    title: "Digital Transformation",
+    icon: { ...faRocket },
+    description: "Modernizing legacy systems and processes, helping businesses transition to efficient, data-driven operations.",
   },
   {
-    title: "WordPress",
-    icon: { ...faWordpressSimple },
-    description: "",
+    title: "Mobile & Responsive",
+    icon: { ...faMobile },
+    description: "Cross-platform solutions with mobile-first design principles and Progressive Web App capabilities.",
   },
   {
-    title: "Docker",
+    title: "DevOps & Integration",
     icon: { ...faDocker },
-    description: "",
+    description: "Streamlined deployment pipelines, API integrations, and automated workflows that reduce operational overhead.",
   },
 ];
 

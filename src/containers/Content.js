@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import About from './About'
 import Experience from './Experience/'
 import Skill from './Skill'
+import Blog from './Blog'
 
 const Content = ({section, index}) => {
   if (!section.type){
@@ -18,6 +19,9 @@ const Content = ({section, index}) => {
       break;
     case 'skill':
       content = <Skill section={section} />
+      break;
+    case 'blog':
+      content = <Blog section={section} />
       break;
   }
   return (

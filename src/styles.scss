@@ -5,7 +5,8 @@
 */
 
 // Define base and accent colors
-$base-color: #3498db;
+$base-color: #2c3e50;
+$accent-color: #3498db;
 
 @use "sass:color";
 
@@ -13,7 +14,7 @@ $base-color: #3498db;
 $background: #fff;
 
 // Define border colors
-$border: #dcd9d9;
+$border: #e8e8e8;
 
 /*
     ---------------------
@@ -102,7 +103,7 @@ header {
     }
 
     &:hover {
-        color: $base-color;
+        color: $accent-color;
         background: #fff;
     }
 }
@@ -186,7 +187,7 @@ div.container:nth-of-type(even) {
     }
 
     h2 {
-        color: color.adjust($base-color, $lightness: 25%);
+        color: color.adjust($accent-color, $lightness: 5%);
         font-weight: 500;
         font-size: 2.25em;
         margin-bottom: 15px;
@@ -251,7 +252,8 @@ div.container:nth-of-type(even) {
 */
 
 #experience,
-#skill {
+#skill,
+#blog {
     padding: 50px 15px;
     text-align: center;
     border-bottom: 1px solid $border;
@@ -271,7 +273,7 @@ div.container:nth-of-type(even) {
         right: auto;
         height: 100%;
         width: 3px;
-        background: $base-color;
+        background: $accent-color;
         z-index: 0;
     }
 
@@ -280,8 +282,8 @@ div.container:nth-of-type(even) {
         content: '';
         width: 3px;
         height: 40px;
-        background: $base-color;
-        background: linear-gradient(to bottom, $base-color, rgba($base-color, 0));
+        background: $accent-color;
+        background: linear-gradient(to bottom, $accent-color, rgba($accent-color, 0));
         top: 100%;
         left: 303px;
     }
@@ -308,7 +310,7 @@ div.container:nth-of-type(even) {
     color: #fff;
     width: 50px;
     height: 50px;
-    background: $base-color;
+    background: $accent-color;
     border-radius: 50%;
     float: left;
     z-index: 99;
@@ -439,4 +441,172 @@ div.container:nth-of-type(even) {
 
 .btn-rounded-white {
 
+}
+
+/*
+    ---------------------------
+    ----- 7. Blog Styles -----
+    ---------------------------
+*/
+
+.blog-highlight {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.blog-icon {
+    color: $accent-color;
+    margin-bottom: 20px;
+    
+    svg {
+        opacity: 0.9;
+    }
+}
+
+.blog-highlight h3 {
+    font-size: 2.2em;
+    font-weight: 600;
+    color: $base-color;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.blog-tagline {
+    font-size: 1.2em;
+    color: #6c757d;
+    font-style: italic;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.blog-description {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.blog-topics {
+    margin-bottom: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.topic-tag {
+    background: linear-gradient(45deg, $accent-color, color.adjust($accent-color, $lightness: 10%));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    box-shadow: 0 3px 8px rgba($accent-color, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba($accent-color, 0.4);
+    }
+}
+
+.btn-blog {
+    display: inline-block;
+    background: linear-gradient(45deg, $accent-color, color.adjust($accent-color, $lightness: -10%));
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    box-shadow: 0 4px 15px rgba($accent-color, 0.3);
+    transition: all 0.3s ease;
+    border: none;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba($accent-color, 0.4);
+        text-decoration: none;
+        color: white;
+    }
+    
+    &:visited {
+        color: white;
+    }
+    
+    svg {
+        margin-left: 8px;
+        transition: transform 0.2s ease;
+    }
+    
+    &:hover svg {
+        transform: translateX(3px);
+    }
+}
+
+// Enhanced card styles for skills
+.skills.card {
+    max-width: 350px;
+    margin: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    
+    .section {
+        padding: 25px;
+        
+        h3 {
+            color: $base-color;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        p {
+            color: #6c757d;
+            line-height: 1.6;
+            font-size: 0.95em;
+            text-align: left;
+        }
+    }
+}
+
+// Responsive blog styles
+@media only screen and (max-width: 768px) {
+    .blog-highlight {
+        margin: 20px;
+        padding: 30px 20px;
+    }
+    
+    .blog-topics {
+        justify-content: center;
+    }
+    
+    .topic-tag {
+        margin: 5px;
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+    
+    .skills.card {
+        max-width: 100%;
+        margin: 10px 0;
+    }
 }

@@ -8,7 +8,7 @@ import resume from "../../Resume-JonathanTey.pdf";
 
 const Info = {
   name: "Jonathan Tey",
-  position: "Full-Stack Engineer",
+  position: "Senior Full-Stack Engineer & Technical Consultant",
   resume: resume
 };
 
@@ -23,14 +23,19 @@ const Sections = [
     type: "about"
   },
   {
-    title: "Projects",
+    title: "Experience",
     link: "project",
     type: "experience"
   },
   {
-    title: "Skills",
+    title: "Solutions",
     link: "skill",
     type: "skill"
+  },
+  {
+    title: "Blog",
+    link: "blog",
+    type: "blog"
   }
 ];
 
