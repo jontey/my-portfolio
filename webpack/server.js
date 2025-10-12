@@ -1,19 +1,22 @@
-var webpack = require('webpack')
-var WebpackDevServer = require('webpack-dev-server')
-var config = require('./webpack.dev.config')
+var webpack = require("webpack");
+var WebpackDevServer = require("webpack-dev-server");
+var config = require("./webpack.dev.config");
 
-new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
-  hot: true,
-  inline: true,
-  historyApiFallback: true,
-  headers: {
-    'Access-Control-Allow-Origin': '*'
-  }
-}).listen(8080, '0.0.0.0', function (err, result) {
-  if (err) {
-    console.log(err)
-  }
+const compiler = webpack(config);
 
-  console.log('Listening at 0.0.0.0:8080')
-})
+const server = new WebpackDevServer(
+  {
+    hot: true,
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    host: "0.0.0.0",
+    port: 8080,
+  },
+  compiler
+);
+
+server.startCallback(() => {
+  console.log("Listening at 0.0.0.0:8080");
+});

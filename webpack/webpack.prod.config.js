@@ -1,8 +1,8 @@
 const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const commonConfig = require("./webpack.common.config");
 
 const prodConfig = {
@@ -12,34 +12,43 @@ const prodConfig = {
 
   output: {
     path: path.resolve("./build"),
-    filename: "index.js"
+    filename: "index.js",
   },
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract("css-loader")
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.scss$/,
-        use: ExtractTextPlugin.extract("css-loader!sass-loader")
-      }
-    ]
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              api: "modern",
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new webpack.LoaderOptionsPlugin({
       minimize: true,
-      debug: false
+      debug: false,
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": JSON.stringify("production")
+      "process.env.NODE_ENV": JSON.stringify("production"),
     }),
-    new ExtractTextPlugin({
-      filename: "[name].css"
-    })
-  ]
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
 };
 
-module.exports = merge.smart(prodConfig, commonConfig);
+module.exports = merge(commonConfig, prodConfig);

@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 
-const merge = require("webpack-merge");
+const { mergeWithRules } = require("webpack-merge");
 const commonConfig = require("./webpack.common.config");
 
 const devConfig = {
@@ -9,51 +9,49 @@ const devConfig = {
 
   mode: "development",
 
-  entry: {
-    index: [
-      "react-hot-loader/patch",
-      "webpack-dev-server/client?http://localhost:8080",
-      "webpack/hot/only-dev-server"
-    ]
-  },
-
   output: {
-    publicPath: "/"
+    publicPath: "/",
   },
 
   module: {
     rules: [
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader?sourceMap"
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.scss$/,
         use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: true
-            }
-          },
+          "style-loader",
+          "css-loader",
           {
             loader: "sass-loader",
             options: {
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
+              api: "modern",
+            },
+          },
+        ],
+      },
+    ],
   },
 
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 };
 
-module.exports = merge.smart(devConfig, commonConfig);
+const mergedConfig = mergeWithRules({
+  module: {
+    rules: {
+      test: "match",
+      use: "replace",
+    },
+  },
+})(commonConfig, devConfig);
+
+// Prepend HMR entries to the existing entry
+mergedConfig.entry.index = [
+  "react-hot-loader/patch",
+  "webpack-dev-server/client?http://localhost:8080",
+  "webpack/hot/only-dev-server",
+].concat(mergedConfig.entry.index);
+
+module.exports = mergedConfig;
