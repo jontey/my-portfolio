@@ -11,24 +11,20 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.js/,
+        test: /\.js$/,
         loader: "babel-loader",
-        exclude: "/node_modules/"
+        exclude: /node_modules/
       },
       {
         test: /\.pdf$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]?[hash]"
-            }
-          }
-        ]
+        type: "asset/resource",
+        generator: {
+          filename: "[name][ext]?[hash]"
+        }
       },
       {
-        test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.png$|\.jpg$|\.gif$/,
-        loader: "file-loader"
+        test: /\.(woff2?|ttf|eot|svg|png|jpg|gif)$/,
+        type: "asset/resource"
       },
       {
         test: /\.html$/,

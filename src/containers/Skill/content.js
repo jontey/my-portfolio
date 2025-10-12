@@ -7,7 +7,7 @@ import {
   faWordpressSimple,
   faDocker,
   faGitlab,
-} from "@fortawesome/fontawesome-free-brands";
+} from "@fortawesome/free-brands-svg-icons";
 
 const Skills = [
   {

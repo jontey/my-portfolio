@@ -47,11 +47,6 @@ const mergedConfig = mergeWithRules({
   },
 })(commonConfig, devConfig);
 
-// Prepend HMR entries to the existing entry
-mergedConfig.entry.index = [
-  "react-hot-loader/patch",
-  "webpack-dev-server/client?http://localhost:8080",
-  "webpack/hot/only-dev-server",
-].concat(mergedConfig.entry.index);
+// HMR is built into webpack-dev-server v5
 
 module.exports = mergedConfig;

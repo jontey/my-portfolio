@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
-import { faAngleDown } from '@fortawesome/fontawesome-free-solid'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const handleShow = name => {
   document.getElementById(name).scrollIntoView({block: 'start', behavior: 'smooth'})
