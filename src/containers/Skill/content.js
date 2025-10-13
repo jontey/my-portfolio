@@ -19,34 +19,34 @@ import {
 
 const Skills = [
   {
-    title: "Enterprise Solutions",
+    title: "Enterprise Software Solutions",
     icon: { ...faServer },
-    description: "Custom ERP systems, inventory management, and multi-branch operational platforms that scale with your business needs.",
+    description: "Custom ERP development, real-time inventory management systems, and multi-branch operational platforms. Scalable enterprise architecture for manufacturing, retail, and distribution businesses. Technologies: Python, Django, PostgreSQL, React, microservices.",
   },
   {
-    title: "Cloud Architecture",
+    title: "Cloud Architecture & Migration",
     icon: { ...faCloud },
-    description: "Scalable, cloud-ready applications with modern deployment strategies using containerization and microservices.",
+    description: "Cloud-native solutions using AWS, Azure, and Google Cloud. Docker containerization, Kubernetes orchestration, and serverless architectures. Migration strategies for legacy system modernization and cloud-ready deployment.",
   },
   {
-    title: "Full-Stack Development", 
+    title: "Full-Stack Development",
     icon: { ...faReact },
-    description: "End-to-end web applications using React, Node.js, Python, and modern JavaScript frameworks for seamless user experiences.",
+    description: "End-to-end web application development using React (Hooks, Context, Redux), Node.js (Express, NestJS), Python (Django, Flask), and TypeScript. RESTful APIs, GraphQL, and modern SPA architecture with 10+ years hands-on experience.",
   },
   {
-    title: "Digital Transformation",
+    title: "Digital Transformation & Consulting",
     icon: { ...faRocket },
-    description: "Modernizing legacy systems and processes, helping businesses transition to efficient, data-driven operations.",
+    description: "Technical consulting for system architecture and technology strategy. Legacy system modernization, process automation, and data-driven operations. Helping SMEs and enterprises transition to efficient, scalable digital solutions.",
   },
   {
-    title: "Mobile & Responsive",
+    title: "Mobile & Progressive Web Apps",
     icon: { ...faMobile },
-    description: "Cross-platform solutions with mobile-first design principles and Progressive Web App capabilities.",
+    description: "Cross-platform solutions with mobile-first design principles. Progressive Web App (PWA) development, responsive interfaces, and offline-capable applications. React Native and hybrid mobile strategies.",
   },
   {
-    title: "DevOps & Integration",
+    title: "DevOps & API Integration",
     icon: { ...faDocker },
-    description: "Streamlined deployment pipelines, API integrations, and automated workflows that reduce operational overhead.",
+    description: "CI/CD pipelines with GitLab CI, GitHub Actions, and Jenkins. Docker containerization, Infrastructure as Code (Terraform), API development and third-party integrations. Automated testing and deployment workflows.",
   },
 ];
 

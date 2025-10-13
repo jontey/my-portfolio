@@ -30,10 +30,11 @@ const Blog = ({section}) => {
               <span className="topic-tag">Machine Learning</span>
               <span className="topic-tag">Linux Systems</span>
             </div>
-            <a href="https://thoughts.jonathantey.com" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               className="btn-blog">
+            <a href="https://thoughts.jonathantey.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="btn-blog"
+               aria-label="Visit JT's Thoughts technical blog (opens in new tab)">
               Visit Blog <FontAwesomeIcon icon={faExternalLinkAlt} />
             </a>
           </div>

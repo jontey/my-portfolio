@@ -7,8 +7,12 @@ const Header = ({ sections }) => {
     <header
       style={{ backgroundColor: "#12171a", border: 0 }}
       className="sticky"
+      role="navigation"
+      aria-label="Main navigation"
     >
-      {sections.map((section) => HeaderItems({ ...section }))}
+      <nav>
+        {sections.map((section) => HeaderItems({ ...section }))}
+      </nav>
     </header>
   );
 };

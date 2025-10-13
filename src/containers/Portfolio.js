@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import Lead from "./Lead";
 import Content from "./Content";
+import Footer from "./Footer";
 
 import resume from "../../Resume-JonathanTey.pdf";
 
@@ -44,7 +45,8 @@ const Portfolio = () => [
   <Lead key="Lead" info={Info} />,
   ...Sections.map((section, i) => (
     <Content section={section} key={`Sections_${i}`} index={i} />
-  ))
+  )),
+  <Footer key="Footer" />
 ];
 
 export default Portfolio;

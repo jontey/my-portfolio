@@ -14,6 +14,8 @@ const HeaderItems = ({ title, link }) => (
     color="link"
     className="button"
     onClick={handleShow.bind(this, link)}
+    aria-label={`Navigate to ${title} section`}
+    type="button"
   >
     {title}
   </button>

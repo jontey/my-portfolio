@@ -53,10 +53,25 @@ $border: #e8e8e8;
 */
 
 body {
+    font-size: 17px;
+    line-height: 1.7;
+
     &.active {
         overflow: hidden;
         z-index: -1;
     }
+}
+
+// Accessibility: Focus indicators
+*:focus {
+    outline: 3px solid $accent-color;
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+    outline: 3px solid $accent-color;
+    outline-offset: 2px;
 }
 
 @keyframes dropHeader {
@@ -74,6 +89,13 @@ header {
     animation-iteration-count: 1;
     animation-timing-function: ease;
     animation-duration: 0.75s;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    min-height: 60px;
+    padding: 15px 0;
+    background-color: #12171a !important;
 }
 
 #menu {
@@ -163,6 +185,18 @@ div.container:nth-of-type(even) {
     background-size: cover;
     padding: 15px;
     overflow: hidden;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
 }
 
 #lead-content {
@@ -184,13 +218,15 @@ div.container:nth-of-type(even) {
         text-transform: uppercase;
         letter-spacing: 0.05em;
         line-height: 0.9em;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
     }
 
     h2 {
-        color: color.adjust($accent-color, $lightness: 5%);
+        color: #fff;
         font-weight: 500;
         font-size: 2.25em;
         margin-bottom: 15px;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     }
 }
 
@@ -242,6 +278,7 @@ div.container:nth-of-type(even) {
 
     p {
         margin: 0;
+        line-height: 1.8;
     }
 }
 
@@ -254,7 +291,7 @@ div.container:nth-of-type(even) {
 #experience,
 #skill,
 #blog {
-    padding: 50px 15px;
+    padding: 70px 15px;
     text-align: center;
     border-bottom: 1px solid $border;
 }
@@ -302,7 +339,7 @@ div.container:nth-of-type(even) {
     position: relative;
     display: block;
     vertical-align: top;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .vtimeline-icon {
@@ -315,6 +352,13 @@ div.container:nth-of-type(even) {
     float: left;
     z-index: 99;
     margin-left: 280px;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 6px $accent-color, 0 4px 8px rgba($accent-color, 0.4);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0 0 4px #fff, 0 0 0 6px $accent-color, 0 0 20px rgba($accent-color, 0.6);
+        transform: scale(1.1);
+    }
 
     svg {
         display: block;
@@ -402,6 +446,10 @@ div.container:nth-of-type(even) {
 // Small Devices
 @media only screen and (max-width : 768px) {
 
+    body {
+        font-size: 16px;
+    }
+
     header {
         position: fixed;
         display: none;
@@ -427,6 +475,21 @@ div.container:nth-of-type(even) {
 
     #lead-down {
         display: none;
+    }
+
+    #about,
+    #experience,
+    #skill,
+    #blog {
+        padding: 50px 15px;
+    }
+
+    .heading {
+        font-size: 1.75em;
+    }
+
+    .vtimeline-content {
+        padding: 12px;
     }
 
     footer {
@@ -558,12 +621,14 @@ div.container:nth-of-type(even) {
     background: white;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid rgba(0,0,0,0.05);
-    
+    cursor: pointer;
+
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 16px 48px rgba($accent-color, 0.2);
+        border-color: rgba($accent-color, 0.3);
     }
     
     .section {
@@ -594,19 +659,99 @@ div.container:nth-of-type(even) {
         margin: 20px;
         padding: 30px 20px;
     }
-    
+
     .blog-topics {
         justify-content: center;
     }
-    
+
     .topic-tag {
         margin: 5px;
         font-size: 0.8em;
         padding: 6px 12px;
     }
-    
+
     .skills.card {
         max-width: 100%;
         margin: 10px 0;
+    }
+}
+
+/*
+    ---------------------------
+    ----- 8. Footer Styles -----
+    ---------------------------
+*/
+
+.contact-footer {
+    background: linear-gradient(135deg, $base-color 0%, color.adjust($base-color, $lightness: -10%) 100%);
+    color: white;
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-top: 3px solid $accent-color;
+}
+
+.footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    color: white;
+    transition: all 0.3s ease;
+    display: inline-block;
+
+    &:hover {
+        color: $accent-color;
+        transform: translateY(-5px);
+    }
+
+    &:visited {
+        color: white;
+    }
+}
+
+.footer-info {
+    margin-top: 25px;
+
+    p {
+        margin: 10px 0;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .location {
+        font-size: 1.1em;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .copyright {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.7);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+}
+
+// Footer responsive styles
+@media only screen and (max-width: 768px) {
+    .contact-footer {
+        padding: 40px 15px 30px;
+    }
+
+    .social-links {
+        gap: 20px;
+    }
+
+    .footer-info .location {
+        font-size: 1em;
     }
 }
