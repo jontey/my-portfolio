@@ -3,10 +3,8 @@ import { createRoot } from "react-dom/client";
 import Portfolio from "./containers/Portfolio";
 import ReactGA from "react-ga";
 
-import "./styles.scss";
-
-/* Mini.css imports */
-import "mini.css/dist/mini-default.css";
+/* Tailwind CSS */
+import "./tailwind.css";
 
 ReactGA.initialize("UA-119342735-1");
 ReactGA.pageview(window.location.pathname + window.location.search);

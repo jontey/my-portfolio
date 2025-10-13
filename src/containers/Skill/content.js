@@ -1,19 +1,11 @@
 import {
-  faNodeJs,
-  faJs,
-  faPython,
-  faPhp,
   faReact,
-  faWordpressSimple,
   faDocker,
-  faGitlab,
 } from "@fortawesome/free-brands-svg-icons";
 import {
   faServer,
   faCloud,
   faMobile,
-  faDatabase,
-  faCogs,
   faRocket,
 } from "@fortawesome/free-solid-svg-icons";
 
