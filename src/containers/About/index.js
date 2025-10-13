@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import Content from "./content";
+import SectionHeading from "../../components/SectionHeading";
 
 import aboutMeImage from "../../../images/jt.png";
 
 const About = ({ section }) => (
-  <div className="row">
-    <div className="col-sm-2">
-      <img className="img-rounded" src={aboutMeImage} />
+  <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
+    <div className="w-48 flex-shrink-0">
+      <img className="rounded-full w-full" src={aboutMeImage} alt="Jonathan Tey" />
     </div>
-    <div className="col-sm col-sm-offset-1">
-      <h2 className="heading">{section.title}</h2>
-      <p>{Content}</p>
+    <div className="flex-1">
+      <SectionHeading>{section.title}</SectionHeading>
+      {Content.map((paragraph, index) => (
+        <p key={index} className="mb-0 leading-[1.8]">{paragraph}</p>
+      ))}
     </div>
   </div>
 );

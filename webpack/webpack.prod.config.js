@@ -19,13 +19,18 @@ const prodConfig = {
     rules: [
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+        ],
       },
       {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
+          "postcss-loader",
           {
             loader: "sass-loader",
             options: {
