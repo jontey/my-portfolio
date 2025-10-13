@@ -28,7 +28,10 @@ const config = {
       },
       {
         test: /\.html$/,
-        loader: "html-loader"
+        loader: "html-loader",
+        options: {
+          sources: false
+        }
       }
     ]
   },
@@ -38,9 +41,6 @@ const config = {
       template: "../src/index.html",
       filename: "index.html",
       inject: "body"
-    }),
-    new webpack.ProvidePlugin({
-      Popper: ["popper.js", "default"]
     })
   ]
 };
