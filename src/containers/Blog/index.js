@@ -7,18 +7,18 @@ const Blog = ({section}) => {
   return ([
       <div key="blog_header" className="max-w-full">
         <div className="w-full">
-          <SectionHeading>{section.title}</SectionHeading>
+          <SectionHeading light>{section.title}</SectionHeading>
         </div>
       </div>,
       <div key="blog_content" className="max-w-full">
         <div className="w-full">
-          <div className="max-w-3xl mx-auto p-10 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] text-center border border-white/20">
+          <div className="max-w-3xl mx-auto p-10 bg-white/10 backdrop-blur-md rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] text-center border border-white/20">
             <div className="text-brand mb-5">
               <FontAwesomeIcon icon={faPenFancy} size="3x" className="opacity-90" />
             </div>
-            <h3 className="text-4xl font-semibold text-base-dark mb-2 tracking-tight">JT's Thoughts</h3>
-            <p className="text-xl text-gray-600 italic mb-6 font-light">Technical insights, stories, and ideas</p>
-            <p className="text-lg leading-[1.7] text-gray-700 mb-8 text-left">
+            <h3 className="text-4xl font-semibold text-white mb-2 tracking-tight">JT's Thoughts</h3>
+            <p className="text-xl text-gray-200 italic mb-6 font-light">Technical insights, stories, and ideas</p>
+            <p className="text-lg leading-[1.7] text-gray-100 mb-8 text-left">
               Explore my technical blog where I share hands-on experiences with software development,
               DevOps practices, container technologies, and emerging tech. From LLM compression techniques
               to WSL configurations and Docker workflows, I document practical solutions and lessons learned

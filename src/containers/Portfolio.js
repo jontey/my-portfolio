@@ -24,7 +24,7 @@ const Sections = [
     type: "about"
   },
   {
-    title: "Experience",
+    title: "Experiences",
     link: "project",
     type: "experience"
   },
