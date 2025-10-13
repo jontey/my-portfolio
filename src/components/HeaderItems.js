@@ -9,10 +9,8 @@ const handleShow = (name) => {
 
 const HeaderItems = ({ title, link }) => (
   <button
-    style={{ background: "#12171a", color: "#f5f5f5" }}
     key={title}
-    color="link"
-    className="button"
+    className="nav-button"
     onClick={handleShow.bind(this, link)}
     aria-label={`Navigate to ${title} section`}
     type="button"

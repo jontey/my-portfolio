@@ -24,7 +24,9 @@ const Skill = ({section}) => {
         </div>
       </div>,
       <div key="skills_content" className="row">
-        {skillItems}
+        <div className="skills-grid">
+          {skillItems}
+        </div>
       </div>
     ]
     )

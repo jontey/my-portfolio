@@ -5,8 +5,7 @@ import HeaderItems from "../components/HeaderItems";
 const Header = ({ sections }) => {
   return (
     <header
-      style={{ backgroundColor: "#12171a", border: 0 }}
-      className="sticky"
+      className="main-header"
       role="navigation"
       aria-label="Main navigation"
     >
