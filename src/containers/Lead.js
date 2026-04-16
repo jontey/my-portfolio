@@ -4,7 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
 
 const handleShow = name => {
-  document.getElementById(name).scrollIntoView({block: 'start', behavior: 'smooth'})
+  const target = document.getElementById(name)
+  if (!target) return
+
+  const header = document.querySelector("header[role='navigation']")
+  const offset = header ? header.getBoundingClientRect().height + 8 : 0
+  const top = target.getBoundingClientRect().top + window.scrollY - offset
+
+  window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' })
 }
 
 const Lead = ({info}) => (

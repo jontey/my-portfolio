@@ -1,7 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Header from "./Header";
 import Lead from "./Lead";
+import ScrollStory from "./ScrollStory";
 import Content from "./Content";
 import Footer from "./Footer";
 
@@ -40,13 +41,16 @@ const Sections = [
   }
 ];
 
-const Portfolio = () => [
-  <Header key="Header" sections={Sections} />,
-  <Lead key="Lead" info={Info} />,
-  ...Sections.map((section, i) => (
-    <Content section={section} key={`Sections_${i}`} index={i} />
-  )),
-  <Footer key="Footer" />
-];
+const Portfolio = () => (
+  <div className="relative isolate overflow-x-hidden bg-slate-950/80">
+    <ScrollStory />
+    <Header sections={Sections} />
+    <Lead info={Info} />
+    {Sections.map((section, i) => (
+      <Content section={section} key={`Sections_${i}`} index={i} />
+    ))}
+    <Footer />
+  </div>
+);
 
 export default Portfolio;
