@@ -1,10 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const getHeaderOffset = () => {
+  const header = document.querySelector("header[role='navigation']");
+  return header ? header.getBoundingClientRect().height : 0;
+};
+
 const handleShow = (name) => {
-  document
-    .getElementById(name)
-    .scrollIntoView({ block: "start", behavior: "smooth" });
+  const target = document.getElementById(name);
+  if (!target) return;
+
+  const offset = getHeaderOffset() + 8;
+  const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+  window.scrollTo({
+    top: Math.max(top, 0),
+    behavior: "smooth"
+  });
 };
 
 const HeaderItems = ({ title, link }) => (
@@ -21,8 +33,7 @@ const HeaderItems = ({ title, link }) => (
 
 HeaderItems.propTypes = {
   title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  handleShow: PropTypes.func.isRequired,
+  link: PropTypes.string.isRequired
 };
 
 export default HeaderItems;
