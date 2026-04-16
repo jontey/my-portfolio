@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Header from "./Header";
 import Lead from "./Lead";
+import ScrollStory from "./ScrollStory";
 import Content from "./Content";
 import Footer from "./Footer";
 
@@ -43,6 +44,7 @@ const Sections = [
 const Portfolio = () => [
   <Header key="Header" sections={Sections} />,
   <Lead key="Lead" info={Info} />,
+  <ScrollStory key="ScrollStory" />,
   ...Sections.map((section, i) => (
     <Content section={section} key={`Sections_${i}`} index={i} />
   )),
